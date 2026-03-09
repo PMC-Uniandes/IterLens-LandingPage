@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IterLens | See every step of the journey</title>
+    <link rel="icon" href="../assets/logo.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- NAV -->
+    <nav id="nav">
+      <img src="../assets/banner.png" alt="Logo IterLens" height="50" />
+      <div class="nav-links">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Precios</a>
+        <a href="#contacto">Contacto</a>
+        <button class="btn-nav">Empezar gratis</button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+
+      <div class="hero-tag">Process Mining · Manufactura Industrial</div>
+
+      <h1>TU PLANTA<br /><em>HABLA</em><br />POR WHATSAPP</h1>
+
+      <p class="hero-sub">
+        IterLens convierte los mensajes de tus operarios en datos estructurados
+        de mantenimiento. Detecta cuellos de botella. Elimina tiempos muertos.
+        <em style="font-style: italic; color: var(--accent)"
+          >See every step of the journey.</em
+        >
+      </p>
+
+      <div class="hero-ctas">
+        <button class="btn-primary">Comenzar prueba gratuita</button>
+        <button class="btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          Ver demo
+        </button>
+      </div>
+
+      <!-- WhatsApp Mockup -->
+      <div class="hero-visual">
+        <div class="phone-frame">
+          <div class="phone-header">
+            <div class="phone-avatar">IL</div>
+            <div>
+              <div class="phone-name">IterLens Bot</div>
+              <div class="phone-status">en línea</div>
+            </div>
+          </div>
+          <div class="phone-body" id="chatBody">
+            <div class="msg out">
+              <div class="msg-bubble">
+                Se dañó la prensa M-04, falla eléctrica
+              </div>
+              <div class="msg-time">14:32</div>
+            </div>
+            <div class="msg in" id="msg1" style="opacity: 0">
+              <div class="msg-bubble">
+                <strong style="color: #00c8d4"
+                  >&#10003; ¿Confirmas el registro?</strong
+                >
+                <div class="msg-code">
+                  <span class="ic">
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="2" y="3" width="20" height="14" rx="2" />
+                      <path d="M8 21h8M12 17v4" />
+                    </svg>
+                    Máquina: M-04 </span
+                  ><br />
+                  <span class="ic">
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                    Tipo: Eléctrica </span
+                  ><br />
+                  <span class="ic">
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                    Turno: TARDE </span
+                  ><br />
+                  <span class="ic" style="color: #ef4444">
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                      />
+                      <line x1="12" y1="9" x2="12" y2="13" />
+                      <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                    Prioridad: Alta
+                  </span>
+                </div>
+              </div>
+              <div class="msg-time">14:32</div>
+            </div>
+            <div class="msg out" id="msg2" style="opacity: 0">
+              <div class="msg-bubble">¡Si, perfecto!</div>
+              <div class="msg-time">16:45</div>
+            </div>
+            <div class="msg in" id="msg3" style="opacity: 0">
+              <div class="msg-bubble">
+                <strong style="color: #00c8d4"
+                  >&#35; Ticket #2847 cerrado</strong
+                >
+                <div class="msg-code">
+                  <span class="ic">
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                    TMDR: 2h 13min </span
+                  ><br />
+                  <span class="ic">
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    Técnico: Juan P. </span
+                  ><br />
+                  <span class="ic">
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    </svg>
+                    Guardado en IterLens
+                  </span>
+                </div>
+              </div>
+              <div class="msg-time">16:46</div>
+            </div>
+            <div class="msg in" id="msg4" style="opacity: 0">
+              <div class="typing"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar reveal">
+      <div class="stat">
+        <div class="stat-num"><span id="c1">0</span>%</div>
+        <div class="stat-label">Reducción tiempo muerto</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span id="c2">0</span>x</div>
+        <div class="stat-label">Más rápido que Excel</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span id="c3">0</span>%</div>
+        <div class="stat-label">Adopción en 48h</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$<span id="c4">0</span>K</div>
+        <div class="stat-label">Ahorro mensual promedio</div>
+      </div>
+    </div>
+
+    <!-- TICKER -->
+    <div class="ticker">
+      <div class="ticker-inner">
+        <span class="ticker-item">REGISTRO EN WHATSAPP</span>
+        <span class="ticker-item">DASHBOARD EN TIEMPO REAL</span>
+        <span class="ticker-item">OEE · TMEF · TMDR</span>
+        <span class="ticker-item">ALERTAS AUTOMÁTICAS</span>
+        <span class="ticker-item">ANÁLISIS DE CAUSAS RAÍZ</span>
+        <span class="ticker-item">REGISTRO EN WHATSAPP</span>
+        <span class="ticker-item">DASHBOARD EN TIEMPO REAL</span>
+        <span class="ticker-item">OEE · TMEF · TMDR</span>
+        <span class="ticker-item">ALERTAS AUTOMÁTICAS</span>
+        <span class="ticker-item">ANÁLISIS DE CAUSAS RAÍZ</span>
+      </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="problem" id="problema">
+      <div class="reveal">
+        <div class="section-tag">// el problema</div>
+        <h2>TU PLANTA <em>SANGRA</em><br />DATOS CADA DÍA</h2>
+      </div>
+      <div class="problem-grid reveal">
+        <div class="problem-card" data-num="01">
+          <h3>Excel desactualizado</h3>
+          <p>
+            El operario lo llena al final del turno, si se acuerda. La mitad de
+            los eventos nunca se registran.
+          </p>
+        </div>
+        <div class="problem-card" data-num="02">
+          <h3>WhatsApp informal</h3>
+          <p>
+            El reporte queda enterrado entre memes y coordinar el almuerzo. No
+            hay trazabilidad ni estructura.
+          </p>
+        </div>
+        <div class="problem-card" data-num="03">
+          <h3>Gerencia ciega</h3>
+          <p>
+            Sin datos confiables, no puedes saber qué máquina es tu cuello de
+            botella real ni cuánto cuesta.
+          </p>
+        </div>
+        <div class="problem-card" data-num="04">
+          <h3>Auditorías manuales</h3>
+          <p>
+            Alguien revisa planillas cada semana. Ese tiempo vale dinero. Y los
+            errores cuestan más.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="como-funciona">
+      <div class="reveal">
+        <div class="section-tag">// cómo funciona</div>
+        <h2>SIMPLE COMO<br /><em>ENVIAR</em> UN MENSAJE</h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Operario reporta</h3>
+          <p>
+            El operario envía un mensaje a WhatsApp como siempre lo hace. Sin
+            apps, sin login, sin capacitación.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>IA procesa</h3>
+          <p>
+            IterLens entiende lenguaje natural, extrae los campos relevantes y
+            confirma el registro en segundos.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Base de datos</h3>
+          <p>
+            El incidente queda estructurado en tu base de datos con máquina,
+            tipo de falla, turno y duración.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>Dashboard en vivo</h3>
+          <p>
+            Gerencia ve KPIs en tiempo real: TMEF, TMDR, OEE, top fallas y costo
+            de tiempo muerto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+      <div class="reveal">
+        <div class="section-tag">// features</div>
+        <h2>TODO LO QUE<br /><em>NECESITAS</em></h2>
+      </div>
+      <div class="features-grid reveal">
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              />
+            </svg>
+          </span>
+          <h3>Bot conversacional</h3>
+          <p>
+            Entiende lenguaje natural. El operario escribe como quiera e
+            IterLens extrae la información correcta.
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+              <polyline points="7 10 12 15 17 10" />
+            </svg>
+          </span>
+          <h3>Dashboard OEE</h3>
+          <p>
+            Visualiza disponibilidad, rendimiento y calidad en tiempo real.
+            Detecta cuellos de botella al instante.
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+          </span>
+          <h3>Alertas inteligentes</h3>
+          <p>
+            Notificación automática al supervisor cuando una parada lleva más de
+            X minutos o la prioridad es alta.
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <polyline points="16 3 21 3 21 8" />
+              <line x1="4" y1="20" x2="21" y2="3" />
+              <polyline points="21 16 21 21 16 21" />
+              <line x1="15" y1="15" x2="21" y2="21" />
+            </svg>
+          </span>
+          <h3>Información flexible</h3>
+          <p>
+            Todos tus registros disponibles en Excel o CSV, listos para analizar
+            cuando los necesites.
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              <line x1="11" y1="8" x2="11" y2="14" />
+              <line x1="8" y1="11" x2="14" y2="11" />
+            </svg>
+          </span>
+          <h3>Análisis de causas raíz</h3>
+          <p>
+            Identifica patrones de falla por máquina, turno y técnico. Toma
+            decisiones con datos, no con intuición.
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+              <line x1="12" y1="12" x2="12" y2="16" />
+              <line x1="10" y1="14" x2="14" y2="14" />
+            </svg>
+          </span>
+          <h3>Multi-planta</h3>
+          <p>
+            Gestiona múltiples plantas y líneas de producción desde un solo
+            dashboard con roles y permisos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <div class="metrics reveal">
+      <div class="metrics-inner">
+        <div class="metric">
+          <div class="metric-num">18%</div>
+          <div class="metric-label">Reducción promedio en tiempo muerto</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">48h</div>
+          <div class="metric-label">Para ver el primer resultado</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">3x</div>
+          <div class="metric-label">Más datos capturados vs Excel</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">94%</div>
+          <div class="metric-label">Tasa de adopción en campo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+      <div class="reveal">
+        <div class="section-tag">// precios</div>
+        <h2>PLANES PARA<br /><em>CADA</em> PLANTA</h2>
+        <p style="color: var(--muted); margin-top: 16px; font-size: 15px">
+          Sin contratos anuales obligatorios. Cancela cuando quieras.
+        </p>
+      </div>
+      <div class="pricing-grid reveal">
+        <!-- STARTER -->
+        <div class="pricing-card">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price">
+            <sup>$</sup>149<span class="period">/mes</span>
+          </div>
+          <p class="pricing-desc">
+            Para plantas pequeñas que quieren empezar a digitalizar su
+            mantenimiento.
+          </p>
+          <ul class="pricing-features">
+            <li class="included">1 planta · hasta 20 máquinas</li>
+            <li class="included">Bot WhatsApp incluido</li>
+            <li class="included">Dashboard básico</li>
+            <li class="included">Exportar a Excel</li>
+            <li class="included">Soporte por email</li>
+          </ul>
+          <button class="btn-pricing">Empezar gratis 14 días</button>
+        </div>
+        <!-- PRO -->
+        <div class="pricing-card featured">
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price">
+            <sup>$</sup>399<span class="period">/mes</span>
+          </div>
+          <p class="pricing-desc">
+            Para plantas medianas que necesitan visibilidad total y alertas en
+            tiempo real.
+          </p>
+          <ul class="pricing-features">
+            <li class="included">3 plantas · máquinas ilimitadas</li>
+            <li class="included">Bot WhatsApp avanzado</li>
+            <li class="included">Dashboard OEE completo</li>
+            <li class="included">Exportar a Excel + PDF</li>
+            <li class="included">Alertas automáticas</li>
+            <li class="included">Análisis causas raíz</li>
+            <li class="included">Soporte prioritario</li>
+          </ul>
+          <button class="btn-pricing">Empezar gratis 14 días</button>
+        </div>
+        <!-- ENTERPRISE -->
+        <div class="pricing-card">
+          <div class="pricing-tier">Enterprise</div>
+          <div
+            class="pricing-price"
+            style="font-size: 48px; line-height: 1.2; padding-top: 8px"
+          >
+            A medida
+          </div>
+          <p class="pricing-desc">
+            Para corporaciones multi-planta con requerimientos de integración y
+            compliance.
+          </p>
+          <ul class="pricing-features">
+            <li class="included">Plantas ilimitadas</li>
+            <li class="included">Todo lo de Pro</li>
+            <li class="included">SSO · LDAP · SAML</li>
+            <li class="included">SLA garantizado</li>
+            <li class="included">Onboarding dedicado</li>
+            <li class="included">Gerente de cuenta</li>
+          </ul>
+          <button class="btn-pricing">Hablar con ventas</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <!-- <section class="testimonials">
+      <div class="reveal">
+        <div class="section-tag">// clientes</div>
+        <h2>LO QUE DICEN<br />LAS <em>PLANTAS</em></h2>
+      </div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial">
+          <p class="testimonial-text">
+            En dos semanas teníamos más datos de mantenimiento que en los
+            últimos seis meses con Excel. Los operarios lo adoptaron sin
+            resistencia porque ya usaban WhatsApp.
+          </p>
+          <div class="testimonial-author">Carlos Mendoza</div>
+          <div class="testimonial-role">
+            Jefe de Producción · Plásticos del Valle
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">
+            Detectamos que la máquina M-12 generaba el 40% de nuestros tiempos
+            muertos. Nunca lo hubiéramos visto con el sistema anterior.
+            Ahorramos $18.000 en el primer mes.
+          </p>
+          <div class="testimonial-author">Ana Quiroga</div>
+          <div class="testimonial-role">
+            Gerente de Planta · Inyección Andina
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">
+            La implementación fue en un día. El bot entiende a nuestros
+            operarios aunque escriban con errores o en forma muy coloquial. Eso
+            era lo que más nos preocupaba.
+          </p>
+          <div class="testimonial-author">Roberto Lara</div>
+          <div class="testimonial-role">
+            Director de Operaciones · Grupo Soplado
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- CTA -->
+    <section class="cta-section" id="contacto">
+      <h2 class="reveal">
+        ¿LISTO PARA VER<br />CADA PASO <em>DEL PROCESO?</em>
+      </h2>
+      <p class="reveal">
+        14 días gratis. Sin tarjeta de crédito. Implementación en 24 horas.<br />
+        <span
+          style="
+            font-family: &quot;JetBrains Mono&quot;, monospace;
+            font-size: 13px;
+            color: var(--accent);
+          "
+          >See every step of the journey.</span
+        >
+      </p>
+      <div class="cta-buttons reveal">
+        <button class="btn-primary">Empezar prueba gratuita</button>
+        <button class="btn-ghost">Agendar demo →</button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">Iter<span>Lens</span></div>
+      <div class="footer-links">
+        <a href="#">Producto</a>
+        <a href="#">Precios</a>
+        <a href="#">Docs</a>
+        <a href="#">Blog</a>
+        <a href="#">Contacto</a>
+      </div>
+      <div class="footer-copy">
+        © 2026 IterLens · See every step of the journey.
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
