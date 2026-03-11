@@ -131,6 +131,35 @@ function showMessage(id, delay) {
   }, delay);
 }
 
+/* ── MODAL VIDEO ── */
+const btnDemo = document.getElementById("btnDemo");
+const modalOverlay = document.getElementById("modalOverlay");
+const modalClose = document.getElementById("modalClose");
+const demoVideo = document.getElementById("demoVideo");
+
+const YOUTUBE_ID = "MogDkO5L888";
+
+function openModal() {
+  demoVideo.src = `https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&mute=1&origin=${window.location.origin}`;
+  modalOverlay.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  demoVideo.src = ""; // detiene el video al cerrar
+  modalOverlay.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+btnDemo.addEventListener("click", openModal);
+modalClose.addEventListener("click", closeModal);
+modalOverlay.addEventListener("click", (e) => {
+  if (e.target === modalOverlay) closeModal();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+});
+
 // Sequence: typing → msg1 → msg2 → msg3
 setTimeout(() => {
   showMessage("msg4", 500); // show typing indicator

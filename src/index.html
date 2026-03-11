@@ -54,7 +54,7 @@
 
       <div class="hero-ctas">
         <button class="btn-primary">Empezar gratis</button>
-        <button class="btn-ghost">
+        <button class="btn-ghost" id="btnDemo">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M8 5v14l11-7z" />
           </svg>
@@ -641,6 +641,33 @@
         © 2026 IterLens · See every step of the journey.
       </div>
     </footer>
+
+    <!-- MODAL VIDEO -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box">
+        <button class="modal-close" id="modalClose">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div class="video-wrapper">
+          <iframe
+            id="demoVideo"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; encrypted-media"
+          ></iframe>
+        </div>
+      </div>
+    </div>
 
     <script src="main.js"></script>
   </body>
