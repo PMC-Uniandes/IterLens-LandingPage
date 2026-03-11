@@ -1,4 +1,4 @@
-![Banner IterLens](./assets/banner.png)
+![Banner IterLens](./src/assets/banner.png)
 
 > _See every step of the journey._
 
