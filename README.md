@@ -9,16 +9,27 @@ Landing page estática para **IterLens**, una plataforma SaaS que permite a plan
 ## Estructura de archivos
 
 ```
-iterlens/
-├── assets/
-|    ├── logo.png
-|    ├── banner.png
+IterLens-landingPage/
 ├── src/
-|    ├── index.html     # Estructura y contenido HTML
-|    ├── styles.css     # Estilos, variables CSS y animaciones
-|    ├── main.js        # Interactividad (cursor, scroll reveal, contadores, chat)
+│   ├── assets/
+│   │   ├── logo.png
+│   │   └── banner.png
+│   ├── empresas/                    # 🏢 Landing page para empresas
+│   │   ├── index.html              # Página principal
+│   │   ├── styles.css              # Estilos y animaciones
+│   │   ├── main.js                 # Interactividad (cursor, scroll reveal, contadores, chat)
+│   │   └── dashboard.js            # Lógica de gráficos del dashboard
+│   └── operarios/                   # 👷 TODO - Landing page para operarios
+│       ├── index.html              # [Por implementar]
+│       ├── styles.css              # [Por implementar]
+│       └── main.js                 # [Por implementar]
 └── README.md
 ```
+
+### 📍 Descripciones
+
+- **`empresas/`** — Landing page diseñada para gerentes y responsables de plantas de manufactura. Presenta la solución desde la perspectiva de ROI, ahorro de costos y KPIs en tiempo real.
+- **`operarios/`** — [TODO] Landing page orientada a operarios de planta. Debe enfatizar la facilidad de uso, integración con WhatsApp, y la ausencia de capacitación técnica requerida.
 
 ---
 
@@ -33,7 +44,7 @@ iterlens/
 | **Cómo funciona** | 4 pasos del flujo operario → dashboard                            |
 | **Features**      | 6 tarjetas de funcionalidades con iconos SVG                      |
 | **Métricas**      | Números de impacto con glow effect                                |
-| **Precios**       | 3 planes: Starter, Pro (destacado), Enterprise                    |
+| **Precios**       | Plan basado en ahorro                                             |
 | **CTA**           | Llamado a acción final                                            |
 | **Footer**        | Links y copyright                                                 |
 
@@ -55,15 +66,35 @@ Todas las variables de diseño están centralizadas en `:root` en `styles.css`:
 
 ```css
 :root {
-  --bg: #070b12; /* Fondo principal */
-  --bg2: #0c1120; /* Fondo secundario */
-  --accent: #00c8d4; /* Cian — color de marca */
-  --accent2: #0ea5e9; /* Cian alternativo */
-  --teal: #00e5cc; /* Teal para gradientes */
-  --text: #e8f0f8; /* Texto principal */
-  --muted: #6b8aad; /* Texto secundario */
-  --border: #1e2d45; /* Bordes y líneas */
-  --card: #0d1626; /* Fondo de tarjetas */
+  --bg: #050a0f;
+  --bg2: #0a0f1a;
+  --bg3: #0f172a;
+  --border: #334155;
+  --border-light: rgba(100, 116, 139, 0.2);
+  --accent: #06b6d4;
+  --accent2: #0284c7;
+  --accent-glow: rgba(6, 182, 212, 0.2);
+  --accent-dim: rgba(6, 182, 212, 0.35);
+  --teal: #14b8a6;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --muted-light: #cbd5e1;
+  --card: #0f172a;
+  --error: #f87171;
+  --success: #06b6d4;
+  --phone-header: #1f2c34;
+  --phone-text: #e9edef;
+  --phone-muted: #8696a0;
+  --phone-bg: #0b141a;
+  --msg-in-bg: #202c33;
+  --msg-out-bg: #005c4b;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --space-2xl: 120px;
+  --input-bg: rgba(15, 23, 42, 0.95);
+  --shadow-deep: 0 40px 120px rgba(0, 0, 0, 0.35);
+  --positive: #22c55e;
+  --card-hover: rgba(30, 41, 59, 0.92);
 }
 ```
 
@@ -98,8 +129,6 @@ npx serve .
 ## Personalización rápida
 
 **Cambiar colores de marca** → edita `--accent` y `--teal` en `:root` de `styles.css`.
-
-**Cambiar precios** → busca las clases `.pricing-price` en `index.html`.
 
 **Cambiar contadores de stats** → edita los valores en `animateCounter('c1', 18)` etc. en `main.js`.
 

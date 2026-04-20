@@ -173,3 +173,61 @@ setTimeout(() => {
     showMessage("msg3", 3600); // ticket cerrado
   }, 1200);
 }, 1000);
+
+const testimonialSlides = document.querySelectorAll(".testimonial-slide");
+const testimonialDots = document.querySelectorAll(".testimonial-dot");
+let activeTestimonial = 0;
+
+function showTestimonial(index) {
+  if (testimonialSlides.length === 0) return;
+  activeTestimonial =
+    (index + testimonialSlides.length) % testimonialSlides.length;
+  testimonialSlides.forEach((slide, i) => {
+    const diff = i - activeTestimonial;
+    if (diff === 0) {
+      slide.style.opacity = "1";
+      slide.style.transform = "translateX(-50%) scale(1)";
+      slide.style.zIndex = "2";
+    } else {
+      slide.style.opacity = "0.3";
+      slide.style.transform = `translateX(calc(-50% + ${diff * 100}%)) scale(0.9)`;
+      slide.style.zIndex = "1";
+    }
+  });
+  testimonialDots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === activeTestimonial);
+  });
+}
+
+testimonialDots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    showTestimonial(Number(dot.dataset.index));
+  });
+});
+
+if (testimonialSlides.length > 0) {
+  setInterval(() => {
+    showTestimonial(activeTestimonial + 1);
+  }, 6000);
+}
+
+const contactForm = document.querySelector(".contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(contactForm);
+    const nombre = formData.get("nombre") || "No especificado";
+    const telefono = formData.get("telefono") || "No especificado";
+    const email = formData.get("email") || "No especificado";
+    const rol = formData.get("rol") || "No especificado";
+    const subject = `Contacto IterLens - ${nombre}`;
+    const body = `Nombre: ${nombre}\nTeléfono: ${telefono}\nEmail: ${email}\nRol en la empresa: ${rol}`;
+    const mailto = `mailto:jd.gutierrezr123@uniandes.edu.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.history.replaceState(
+      null,
+      document.title,
+      window.location.pathname + window.location.search,
+    );
+    window.location.href = mailto;
+  });
+}

@@ -18,7 +18,7 @@
 
     <!-- NAV -->
     <nav id="nav">
-      <img src="./assets/banner.png" alt="Logo IterLens" height="50" />
+      <img src="../assets/banner.png" alt="Logo IterLens" height="50" />
       <!-- Hamburguesa (solo mobile) -->
       <button class="hamburger" id="hamburger" aria-label="Menú">
         <span></span><span></span><span></span>
@@ -29,7 +29,7 @@
         <a href="#features" class="nav-close">Features</a>
         <a href="#pricing" class="nav-close">Precios</a>
         <a href="#contacto" class="nav-close">Contacto</a>
-        <button class="btn-nav">Empezar gratis</button>
+        <button class="btn-nav" onclick="window.location.href='#contacto'">Empezar gratis</button>
       </div>
 
       <div class="nav-overlay" id="navOverlay"></div>
@@ -53,7 +53,7 @@
       </p>
 
       <div class="hero-ctas">
-        <button class="btn-primary">Empezar gratis</button>
+        <a href="#contacto" class="btn-primary" style="text-decoration: none;">Empezar gratis</a>
         <button class="btn-ghost" id="btnDemo">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M8 5v14l11-7z" />
@@ -81,7 +81,7 @@
             </div>
             <div class="msg in" id="msg1" style="opacity: 0">
               <div class="msg-bubble">
-                <strong style="color: #00c8d4"
+                <strong style="color: var(--accent)"
                   >&#10003; ¿Confirmas el registro?</strong
                 >
                 <div class="msg-code">
@@ -126,7 +126,7 @@
                     </svg>
                     Turno: TARDE </span
                   ><br />
-                  <span class="ic" style="color: #ef4444">
+                  <span class="ic" style="color: var(--error)">
                     <svg
                       width="11"
                       height="11"
@@ -153,7 +153,7 @@
             </div>
             <div class="msg in" id="msg3" style="opacity: 0">
               <div class="msg-bubble">
-                <strong style="color: #00c8d4"
+                <strong style="color: var(--accent)"
                   >&#35; Ticket #2847 cerrado</strong
                 >
                 <div class="msg-code">
@@ -289,6 +289,41 @@
       <div class="reveal">
         <div class="section-tag">// cómo funciona</div>
         <h2>SIMPLE COMO<br /><em>ENVIAR</em> UN MENSAJE</h2>
+      </div>
+      <div class="how-visuals reveal">
+        <div class="how-card">
+          <div class="how-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 17.5A8.38 8.38 0 0 1 18.5 21 8.5 8.5 0 1 1 22 17.5z" />
+              <path d="M16.5 14.5a.75.75 0 0 1-.75.75h-5a.75.75 0 0 1-.75-.75V8.5a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 .75.75v6z" />
+            </svg>
+          </div>
+          <h4>WhatsApp directo</h4>
+          <p>El reporte llega como un mensaje fácil de usar, sin apps extra.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12h18" />
+              <path d="M4.5 6h15" />
+              <path d="M5.5 18h13" />
+              <path d="M12 3v18" />
+            </svg>
+          </div>
+          <h4>IA que entiende</h4>
+          <p>El texto se transforma en datos estructurados y triggers automáticos.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="4" width="16" height="16" rx="3" />
+              <path d="M8 12h3v5" />
+              <path d="M12 8h4" />
+            </svg>
+          </div>
+          <h4>Dashboard claro</h4>
+          <p>La información llega a gerencia con métricas y alertas visuales.</p>
+        </div>
       </div>
       <div class="steps reveal">
         <div class="step">
@@ -465,6 +500,96 @@
       </div>
     </section>
 
+    <!-- DASHBOARD PREVIEW -->
+    <section class="dashboard-preview" id="dashboard">
+      <div class="reveal">
+        <div class="section-tag">// dashboard preview</div>
+        <h2>TUS DATOS,<br /><em>EN TIEMPO REAL</em></h2>
+        <p class="section-sub">
+          Métricas vivas de tus máquinas. Sin Excel, sin planillas. Solo datos accionables.
+        </p>
+      </div>
+
+      <div class="dash-wrapper reveal">
+        <!-- Top bar -->
+        <div class="dash-topbar">
+          <div class="dash-title">
+            <span class="dash-dot"></span>
+            IterLens · Dashboard Planta Norte
+          </div>
+          <div class="dash-meta">
+            <span>Turno: TARDE</span>
+            <span class="dash-live">● EN VIVO</span>
+          </div>
+        </div>
+
+        <!-- KPI row -->
+        <div class="dash-kpis">
+          <div class="dash-kpi">
+            <div class="dash-kpi-label">OEE Global</div>
+            <div class="dash-kpi-value accent">87.4%</div>
+            <div class="dash-kpi-delta positive">↑ 3.2% vs ayer</div>
+          </div>
+          <div class="dash-kpi">
+            <div class="dash-kpi-label">Tiempo Muerto</div>
+            <div class="dash-kpi-value">2h 47m</div>
+            <div class="dash-kpi-delta negative">↓ 23% vs semana</div>
+          </div>
+          <div class="dash-kpi">
+            <div class="dash-kpi-label">Fallas hoy</div>
+            <div class="dash-kpi-value">6</div>
+            <div class="dash-kpi-delta positive">↓ 2 vs ayer</div>
+          </div>
+          <div class="dash-kpi">
+            <div class="dash-kpi-label">TMDR Promedio</div>
+            <div class="dash-kpi-value">27 min</div>
+            <div class="dash-kpi-delta positive">↓ 8 min vs semana</div>
+          </div>
+        </div>
+
+        <!-- Charts row -->
+        <div class="dash-charts">
+          <div class="dash-chart-card wide">
+            <div class="dash-chart-title">Tiempo perdido por máquina (horas/mes)</div>
+            <div class="dash-chart-area">
+              <canvas id="chartFallas"></canvas>
+            </div>
+          </div>
+          <div class="dash-chart-card">
+            <div class="dash-chart-title">Distribución por tipo de falla</div>
+            <div class="dash-chart-area">
+              <canvas id="chartTipos"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Savings row -->
+        <div class="dash-savings-row">
+          <div class="dash-savings-card">
+            <div class="dash-savings-icon">💰</div>
+            <div>
+              <div class="dash-savings-label">Ahorro estimado este mes</div>
+              <div class="dash-savings-value">$14,320 COP</div>
+            </div>
+          </div>
+          <div class="dash-savings-card">
+            <div class="dash-savings-icon">📉</div>
+            <div>
+              <div class="dash-savings-label">Horas recuperadas</div>
+              <div class="dash-savings-value">48.5 horas</div>
+            </div>
+          </div>
+          <div class="dash-savings-card">
+            <div class="dash-savings-icon">🔧</div>
+            <div>
+              <div class="dash-savings-label">Máquina crítica del mes</div>
+              <div class="dash-savings-value">M-04 · Prensa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- METRICS -->
     <div class="metrics reveal">
       <div class="metrics-inner">
@@ -491,120 +616,127 @@
     <section class="pricing" id="pricing">
       <div class="reveal">
         <div class="section-tag">// precios</div>
-        <h2>PLANES PARA<br /><em>CADA</em> PLANTA</h2>
+        <h2>PAGA SOLO POR<br /><em>LO QUE AHORRAS</em></h2>
         <p style="color: var(--muted); margin-top: 16px; font-size: 15px">
-          Sin contratos anuales obligatorios. Cancela cuando quieras.
+          Modelo de monetización basado en porcentaje de ahorro. Sin contratos, sin riesgos.
         </p>
       </div>
-      <div class="pricing-grid reveal">
-        <!-- STARTER -->
-        <div class="pricing-card">
-          <div class="pricing-tier">Starter</div>
-          <div class="pricing-price">
-            <sup>$</sup>39<span class="period">/mes</span>
+
+      <!-- Nuevo modelo de pricing -->
+       <div class="custom-container">
+        <div class="pricing-new reveal">
+        <div class="pricing-hero-card">
+          <div class="phc-badge">
+            <span class="phc-badge-dot"></span>
+            Modelo de alineación total
           </div>
-          <p class="pricing-desc">
-            Para plantas pequeñas que quieren empezar a digitalizar su
-            mantenimiento.
+          <h3 class="phc-headline">Solo pagas si ahorras.</h3>
+          <p class="phc-sub">
+            IterLens no cobra por usarte. Cobra cuando te genera valor real.
+            Si no hay ahorro, no hay factura.
           </p>
-          <ul class="pricing-features">
-            <li class="included">20 máquinas</li>
-            <li class="included">Bot WhatsApp incluido</li>
-            <li class="included">Dashboard básico</li>
-            <li class="included">Exportar a Excel</li>
-            <li class="included">Soporte por email</li>
-          </ul>
-          <button class="btn-pricing">Empezar gratis 14 días</button>
-        </div>
-        <!-- PRO -->
-        <div class="pricing-card featured">
-          <div class="pricing-tier">Pro</div>
-          <div class="pricing-price">
-            <sup>$</sup>149<span class="period">/mes</span>
+
+          <div class="phc-steps">
+            <div class="phc-step">
+              <div class="phc-step-num">01</div>
+              <div class="phc-step-content">
+                <div class="phc-step-title">14 días gratis</div>
+                <div class="phc-step-desc">Sin tarjeta de crédito. Implementación en 24h. Empieza a capturar datos desde el día uno.</div>
+              </div>
+            </div>
+            <div class="phc-step-connector"></div>
+            <div class="phc-step">
+              <div class="phc-step-num">02</div>
+              <div class="phc-step-content">
+                <div class="phc-step-title">Medimos tus ahorros reales</div>
+                <div class="phc-step-desc">Calculamos horas recuperadas, paradas evitadas y costo de tiempo muerto reducido mes a mes.</div>
+              </div>
+            </div>
+            <div class="phc-step-connector"></div>
+            <div class="phc-step">
+              <div class="phc-step-num">03</div>
+              <div class="phc-step-content">
+                <div class="phc-step-title">Cobro mensual basado en performance</div>
+                <div class="phc-step-desc">Pagás el 30% de los ahorros generados. Si tu planta ahorró $10,000 COP, nos quedamos $3,000 COP. Alineados.</div>
+              </div>
+            </div>
           </div>
-          <p class="pricing-desc">
-            Para plantas medianas que necesitan visibilidad total y alertas en
-            tiempo real.
-          </p>
-          <ul class="pricing-features">
-            <li class="included">Máquinas ilimitadas</li>
-            <li class="included">Bot WhatsApp avanzado</li>
-            <li class="included">Dashboard OEE completo</li>
-            <li class="included">Exportar a Excel + PDF</li>
-            <li class="included">Alertas automáticas</li>
-            <li class="included">Análisis causas raíz</li>
-            <li class="included">Soporte prioritario</li>
-          </ul>
-          <button class="btn-pricing">Empezar gratis 14 días</button>
-        </div>
-        <!-- ENTERPRISE -->
-        <div class="pricing-card">
-          <div class="pricing-tier">Enterprise</div>
-          <div
-            class="pricing-price"
-            style="font-size: 48px; line-height: 1.2; padding-top: 8px"
-          >
-            A medida
+
+          <div class="phc-example">
+            <div class="phc-example-label">// ejemplo real</div>
+            <div class="phc-example-row">
+              <span>Planta mediana · 40 máquinas · 3 turnos</span>
+            </div>
+            <div class="phc-example-calc">
+              <div class="phc-calc-item">
+                <div class="phc-calc-label">Ahorro mensual detectado</div>
+                <div class="phc-calc-val">$48,000 COP</div>
+              </div>
+              <div class="phc-calc-arrow">→</div>
+              <div class="phc-calc-item">
+                <div class="phc-calc-label">Tu ganancia neta</div>
+                <div class="phc-calc-val accent">$33,600 COP</div>
+              </div>
+              <div class="phc-calc-arrow">→</div>
+              <div class="phc-calc-item">
+                <div class="phc-calc-label">Fee IterLens (30%)</div>
+                <div class="phc-calc-val muted">$14,400 COP</div>
+              </div>
+            </div>
           </div>
-          <p class="pricing-desc">
-            Para corporaciones multi-planta con requerimientos de integración y
-            compliance.
-          </p>
-          <ul class="pricing-features">
-            <li class="included">Plantas ilimitadas</li>
-            <li class="included">Todo lo de Pro</li>
-            <li class="included">SSO · LDAP · SAML</li>
-            <li class="included">SLA garantizado</li>
-            <li class="included">Onboarding dedicado</li>
-            <li class="included">Gerente de cuenta</li>
-          </ul>
-          <button class="btn-pricing">Proximamente</button>
+
+          <a href="#contacto" class="btn-primary phc-cta" style="display: block; margin: 0 auto; text-decoration: none;">Empezar gratis 14 días →</a>
         </div>
-      </div>
+       </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <!-- <section class="testimonials">
-      <div class="reveal">
+    <section class="testimonials reveal" id="testimonials">
+      <div>
         <div class="section-tag">// clientes</div>
         <h2>LO QUE DICEN<br />LAS <em>PLANTAS</em></h2>
       </div>
-      <div class="testimonials-grid reveal">
-        <div class="testimonial">
+
+      <div class="testimonial-carousel">
+        <div class="testimonial-slide active">
+          <div class="testimonial-avatar" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.95), rgba(20, 184, 166, 0.85));">CM</div>
           <p class="testimonial-text">
-            En dos semanas teníamos más datos de mantenimiento que en los
-            últimos seis meses con Excel. Los operarios lo adoptaron sin
-            resistencia porque ya usaban WhatsApp.
+            En dos semanas teníamos más datos de mantenimiento que en los últimos
+            seis meses con Excel. Los operarios lo adoptaron sin resistencia porque
+            ya usaban WhatsApp.
           </p>
           <div class="testimonial-author">Carlos Mendoza</div>
-          <div class="testimonial-role">
-            Jefe de Producción · Plásticos del Valle
-          </div>
+          <div class="testimonial-role">Jefe de Producción · Plásticos del Valle</div>
         </div>
-        <div class="testimonial">
+
+        <div class="testimonial-slide">
+          <div class="testimonial-avatar" style="background: linear-gradient(135deg, rgba(20, 184, 166, 0.95), rgba(16, 185, 242, 0.85));">AQ</div>
           <p class="testimonial-text">
-            Detectamos que la máquina M-12 generaba el 40% de nuestros tiempos
-            muertos. Nunca lo hubiéramos visto con el sistema anterior.
-            Ahorramos $18.000 en el primer mes.
+            Detectamos que la máquina M-12 generaba el 40% de nuestros tiempos muertos.
+            Nunca lo hubiéramos visto con el sistema anterior. Ahorramos $1.800.000 COP en el primer mes.
           </p>
           <div class="testimonial-author">Ana Quiroga</div>
-          <div class="testimonial-role">
-            Gerente de Planta · Inyección Andina
-          </div>
+          <div class="testimonial-role">Gerente de Planta · Inyección Andina</div>
         </div>
-        <div class="testimonial">
+
+        <div class="testimonial-slide">
+          <div class="testimonial-avatar" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.95), rgba(16, 185, 242, 0.85));">RL</div>
           <p class="testimonial-text">
-            La implementación fue en un día. El bot entiende a nuestros
-            operarios aunque escriban con errores o en forma muy coloquial. Eso
-            era lo que más nos preocupaba.
+            La implementación fue en un día. El bot entiende a nuestros operarios
+            aunque escriban con errores o en forma muy coloquial. Eso era lo que
+            más nos preocupaba.
           </p>
           <div class="testimonial-author">Roberto Lara</div>
-          <div class="testimonial-role">
-            Director de Operaciones · Grupo Soplado
-          </div>
+          <div class="testimonial-role">Director de Operaciones · Grupo Soplado</div>
         </div>
       </div>
-    </section> -->
+
+      <div class="testimonial-controls" aria-label="Carrusel de testimonios">
+        <button type="button" class="testimonial-dot active" data-index="0"></button>
+        <button type="button" class="testimonial-dot" data-index="1"></button>
+        <button type="button" class="testimonial-dot" data-index="2"></button>
+      </div>
+    </section>
 
     <!-- CTA -->
     <section class="cta-section" id="contacto">
@@ -623,7 +755,26 @@
         >
       </p>
       <div class="cta-buttons reveal">
-        <button class="btn-ghost">Agendar demo →</button>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="2f098769-9cd0-4137-bfa3-13bca4e83a51">
+          
+          <label>
+            Nombre
+            <input type="text" name="name" placeholder="Tu nombre" required />
+          </label>
+          
+          <label>
+            Email
+            <input type="email" name="email" placeholder="tu@empresa.com" required />
+          </label>
+          
+          <label>
+            Mensaje
+            <textarea name="message" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+          </label>
+          
+          <button class="btn-primary" type="submit">Enviar mensaje</button>
+        </form>
       </div>
     </section>
 
@@ -669,6 +820,8 @@
       </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <script src="dashboard.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
