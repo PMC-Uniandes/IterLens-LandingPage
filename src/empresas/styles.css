@@ -1721,6 +1721,22 @@ h2 em {
   background: linear-gradient(to left, var(--bg), transparent);
 }
 
+@media (max-width: 768px) {
+  .testimonial-carousel::before,
+  .testimonial-carousel::after {
+    display: none;
+  }
+  .dashboard-preview {
+    display: none;
+  }
+  .problem-card::before {
+    display: none;
+  }
+  .phc-example {
+    display: none;
+  }
+}
+
 .testimonial-slide {
   position: absolute;
   top: 0;
@@ -1984,7 +2000,16 @@ footer {
     padding: 120px 30px 80px;
   }
   .hero-visual {
-    display: none;
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 60px;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .hero-visual .phone-frame {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
   }
   h1 {
     font-size: clamp(56px, 12vw, 100px);
