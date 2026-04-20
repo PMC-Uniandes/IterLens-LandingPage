@@ -756,24 +756,40 @@
       </p>
       <div class="cta-buttons reveal">
         <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  
           <input type="hidden" name="access_key" value="2f098769-9cd0-4137-bfa3-13bca4e83a51">
-          
-          <label>
-            Nombre
-            <input type="text" name="name" placeholder="Tu nombre" required />
-          </label>
-          
-          <label>
-            Email
-            <input type="email" name="email" placeholder="tu@empresa.com" required />
-          </label>
-          
-          <label>
-            Mensaje
-            <textarea name="message" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
-          </label>
-          
-          <button class="btn-primary" type="submit">Enviar mensaje</button>
+
+          <div class="form-row">
+            <label>
+              Nombre
+              <input type="text" name="name" placeholder="Tu nombre" required />
+            </label>
+            <label>
+              Teléfono
+              <input type="tel" name="telefono" placeholder="300 000 0000" />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Email
+              <input type="email" name="email" placeholder="tu@empresa.com" required />
+            </label>
+            <label>
+              Rol en la empresa
+              <select name="rol">
+                <option value="">Selecciona un rol</option>
+                <option value="produccion">Producción</option>
+                <option value="mantenimiento">Mantenimiento</option>
+                <option value="gerencia">Gerencia</option>
+                <option value="otro">Otro</option>
+              </select>
+            </label>
+          </div>
+
+          <textarea name="message" placeholder="Escribe tu mensaje..." required></textarea>
+
+          <button class="btn-primary" type="submit">Contactarme</button>
         </form>
       </div>
     </section>

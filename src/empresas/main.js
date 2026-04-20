@@ -211,23 +211,5 @@ if (testimonialSlides.length > 0) {
   }, 6000);
 }
 
-const contactForm = document.querySelector(".contact-form");
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const formData = new FormData(contactForm);
-    const nombre = formData.get("nombre") || "No especificado";
-    const telefono = formData.get("telefono") || "No especificado";
-    const email = formData.get("email") || "No especificado";
-    const rol = formData.get("rol") || "No especificado";
-    const subject = `Contacto IterLens - ${nombre}`;
-    const body = `Nombre: ${nombre}\nTeléfono: ${telefono}\nEmail: ${email}\nRol en la empresa: ${rol}`;
-    const mailto = `mailto:jd.gutierrezr123@uniandes.edu.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.history.replaceState(
-      null,
-      document.title,
-      window.location.pathname + window.location.search,
-    );
-    window.location.href = mailto;
-  });
-}
+// ✓ Web3Forms maneja el envío del formulario automáticamente
+// No es necesario interceptar el submit
