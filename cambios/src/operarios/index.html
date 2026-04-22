@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IterLens Operarios | Reporta en segundos</title>
+    <link rel="icon" href="../assets/logo.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <img src="../assets/banner.png" alt="IterLens" class="brand" />
+      <a href="../empresas/index.html" class="btn-link">Vista Empresas</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="kicker">// diseñado para operarios</p>
+        <h1>REPORTA UNA FALLA<br /><em>EN 15 SEGUNDOS</em></h1>
+        <p class="sub">
+          Sin app nueva, sin capacitación y sin fricción. Solo envía un mensaje de
+          WhatsApp y IterLens convierte tu reporte en un ticket real para mantenimiento.
+        </p>
+        <div class="hero-ctas">
+          <a href="#demo" class="btn-primary">Ver ejemplo real</a>
+          <a href="../empresas/index.html#contacto" class="btn-ghost">Solicitar implementación</a>
+        </div>
+      </section>
+
+      <section class="quick-benefits">
+        <article>
+          <h3>Cero curva de aprendizaje</h3>
+          <p>Usas WhatsApp como siempre. Nada de usuarios, claves ni sistemas complejos.</p>
+        </article>
+        <article>
+          <h3>Confirmación inmediata</h3>
+          <p>El bot valida lo reportado y te devuelve número de ticket y estado al instante.</p>
+        </article>
+        <article>
+          <h3>Seguimiento visible</h3>
+          <p>Sabes si la falla fue tomada, quién la atiende y cuándo se cerró.</p>
+        </article>
+      </section>
+
+      <section class="demo" id="demo">
+        <div class="demo-copy">
+          <p class="kicker">// flujo real</p>
+          <h2>ASÍ SE VE EN TURNO</h2>
+          <p>
+            Ejemplo de conversación real. La IA detecta máquina, tipo de falla y prioridad
+            para escalar automáticamente al equipo correcto.
+          </p>
+        </div>
+
+        <div class="chat-card" aria-live="polite">
+          <div class="chat-head">
+            <span class="dot"></span>
+            IterLens Bot · WhatsApp
+          </div>
+          <div class="chat-body" id="chatBodyOperarios">
+            <div class="msg out">Prensa M-04 detenida, huele a quemado.</div>
+            <div class="msg in hidden-step" data-step>
+              Entendido ✅. ¿Confirmas prioridad alta para mantenimiento eléctrico?
+            </div>
+            <div class="msg out hidden-step" data-step>Confirmo, prioridad alta.</div>
+            <div class="msg in hidden-step" data-step>
+              Ticket #2847 creado. Técnico asignado: Juan P. ETA: 18 min.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="steps">
+        <p class="kicker">// 3 pasos</p>
+        <div class="steps-grid">
+          <article class="step">
+            <span>01</span>
+            <h3>Reporta por voz o texto</h3>
+            <p>Describe la falla como hablas normalmente.</p>
+          </article>
+          <article class="step">
+            <span>02</span>
+            <h3>IA estructura tu reporte</h3>
+            <p>Se extraen datos clave y se valida en el momento.</p>
+          </article>
+          <article class="step">
+            <span>03</span>
+            <h3>Recibes seguimiento</h3>
+            <p>Te llega el estado hasta el cierre del ticket.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>MENOS TIEMPO EXPLICANDO,<br /><em>MÁS TIEMPO PRODUCIENDO</em></h2>
+        <a href="../empresas/index.html#contacto" class="btn-primary">Activar IterLens en mi planta</a>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
