@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IterLens | See every step of the journey</title>
-    <link rel="icon" href="./assets/logo.png" type="image/png" />
+    <link rel="icon" href="../assets/logo.png" type="image/png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap"
       rel="stylesheet"
@@ -223,11 +223,11 @@
       </div>
       <div class="stat">
         <div class="stat-num"><span id="c3">0</span>%</div>
-        <div class="stat-label">Adopción en 48h</div>
+        <div class="stat-label">Tasa de adopción</div>
       </div>
       <div class="stat">
-        <div class="stat-num">$<span id="c4">0</span>M</div>
-        <div class="stat-label">Ahorro mensual promedio</div>
+        <div class="stat-num"><span class="stat-currency">$</span><span id="c4">0</span>M</div>
+        <div class="stat-label">Ahorro mensual promedio (COP)</div>
       </div>
     </div>
 
@@ -591,36 +591,11 @@
       </div>
     </section>
 
-    <!-- METRICS -->
-    <div class="metrics reveal">
-      <div class="metrics-inner">
-        <div class="metric">
-          <div class="metric-num">18%</div>
-          <div class="metric-label">Reducción promedio en tiempo muerto</div>
-        </div>
-        <div class="metric">
-          <div class="metric-num">48h</div>
-          <div class="metric-label">Para ver el primer resultado</div>
-        </div>
-        <div class="metric">
-          <div class="metric-num">3x</div>
-          <div class="metric-label">Más datos capturados vs Excel</div>
-        </div>
-        <div class="metric">
-          <div class="metric-num">94%</div>
-          <div class="metric-label">Tasa de adopción en campo</div>
-        </div>
-      </div>
-    </div>
-
     <!-- PRICING -->
     <section class="pricing" id="pricing">
       <div class="reveal">
         <div class="section-tag">// precios</div>
         <h2>PAGA SOLO POR<br /><em>LO QUE AHORRAS</em></h2>
-        <p style="color: var(--muted); margin-top: 16px; font-size: 15px">
-          Modelo de monetización basado en porcentaje de ahorro. Sin contratos, sin riesgos.
-        </p>
       </div>
 
       <!-- Nuevo modelo de pricing -->
@@ -637,34 +612,48 @@
             Si no hay ahorro, no hay factura.
           </p>
 
-          <div class="phc-steps">
-            <div class="phc-step">
-              <div class="phc-step-num">01</div>
-              <div class="phc-step-content">
-                <div class="phc-step-title">14 días gratis</div>
-                <div class="phc-step-desc">Sin tarjeta de crédito. Implementación en 24h. Empieza a capturar datos desde el día uno.</div>
+          <div class="pricing-cards">
+            <article class="pricing-card-mini">
+              <div class="pcm-top">
+                <div class="pcm-title">Arranque</div>
+                <div class="pcm-price">$0 fijo</div>
               </div>
-            </div>
-            <div class="phc-step-connector"></div>
-            <div class="phc-step">
-              <div class="phc-step-num">02</div>
-              <div class="phc-step-content">
-                <div class="phc-step-title">Medimos tus ahorros reales</div>
-                <div class="phc-step-desc">Calculamos horas recuperadas, paradas evitadas y costo de tiempo muerto reducido mes a mes.</div>
+              <p class="pcm-desc">14 días gratis con implementación en 24h para empezar ya.</p>
+              <ul class="pcm-list">
+                <li>WhatsApp listo desde el día uno</li>
+                <li>Dashboard inicial</li>
+                <li>Onboarding y soporte incluidos</li>
+              </ul>
+            </article>
+
+            <article class="pricing-card-mini featured">
+              <div class="pcm-top">
+                <div class="pcm-title">Medición</div>
+                <div class="pcm-price">Ahorro real</div>
               </div>
-            </div>
-            <div class="phc-step-connector"></div>
-            <div class="phc-step">
-              <div class="phc-step-num">03</div>
-              <div class="phc-step-content">
-                <div class="phc-step-title">Cobro mensual basado en performance</div>
-                <div class="phc-step-desc">Pagás el 30% de los ahorros generados. Si tu planta ahorró $10,000 COP, nos quedamos $3,000 COP. Alineados.</div>
+              <p class="pcm-desc">Cuantificamos el impacto con datos operativos reales.</p>
+              <ul class="pcm-list">
+                <li>TMDR, OEE y tiempo muerto</li>
+                <li>Reportes por turno y máquina</li>
+                <li>Alertas automáticas al supervisor</li>
+              </ul>
+            </article>
+
+            <article class="pricing-card-mini">
+              <div class="pcm-top">
+                <div class="pcm-title">Tarifa</div>
+                <div class="pcm-price">30% del ahorro</div>
               </div>
-            </div>
+              <p class="pcm-desc">Paga solo si hay resultados medibles</p>
+              <ul class="pcm-list">
+                <li>Sin licencias por usuario</li>
+                <li>Sin contratos largos</li>
+              </ul>
+            </article>
           </div>
 
           <div class="phc-example">
-            <div class="phc-example-label">// ejemplo real</div>
+            <div class="phc-example-label">// ejemplo</div>
             <div class="phc-example-row">
               <span>Planta mediana · 40 máquinas · 3 turnos</span>
             </div>
@@ -691,6 +680,7 @@
        </div>
     </section>
 
+    <!-- OPERARIOS -->
     <section class="operarios-bridge reveal" id="operarios">
       <div class="section-tag">// experiencia operarios</div>
       <h2>DISEÑADO PARA EL<br /><em>PISO DE PLANTA</em></h2>
